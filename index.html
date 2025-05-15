@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafika Komputerowa w Dobie AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Grafika Komputerowa w Dobie AI</h1>
+    <a href="./podstrony/ai.html"><button class="button"><span>AI w grafice</span><span>&#11166;</span></button></a>
+    <a href="./podstrony/symulacje.html"><button class="button"><span>Symulacje</span><span>&#11166;</span></button></a>
+    <a href="./podstrony/vr.html"><button class="button"><span>Wirtualna rzeczywistość</span><span>&#11166;</span></button></a>
+    <a href="./podstrony/meta.html"><button class="button"><span>Metaverse</span><span>&#11166;</span></button></a>
+</header>
+
+<section class="section">
+  <h2>Wprowadzenie</h2>
+  <p>Dzięki postępowi sprzętu i algorytmów grafika komputerowa przeszła od prostych, rastrowych modeli oświetlenia do niemal 
+  fotorealistycznych symulacji światła i materiałów. Współczesne karty graficzne (architektury Turing, Ampere i nowsze) wprowadzają w 
+  czasie rzeczywistym sprzętowy ray tracing, co pozwala na naturalne odbicia, załamania i cienie. Fizycznie oparte renderowanie (PBR) 
+  odzwierciedla rzeczywiste prawa optyki, a AI wspomaga generowanie tekstur, odszumianie i supersampling (np. NVIDIA DLSS), utrzymując 
+  płynność nawet w 4K. Proceduralne algorytmy i kompresja geometrii umożliwiają budowę rozległych światów bez ogromnych zasobów, a
+  nowoczesne API (Vulkan, DirectX 12, Metal) lepiej wykorzystują moc GPU. Chmurowe renderowanie z kolei przenosi zaawansowaną grafikę
+  na urządzenia mobilne. Wszystko to zbliża gry, filmy i aplikacje AR/VR do granicy fotorealizmu.</p>
+</section>
+
+<section class="zdj">
+    <h2>Przykłady grafiki</h2>
+    <div class="gallery">
+        <img id="image" src="./zdjecia/zdj_ai.png" alt="Grafika AI">
+        <div class="caption" id="caption">Grafika generowana przez AI</div>
+        <div class="buttons">
+            <button class="btn" id="prev" onclick="changeImage(-1)">&#8249;</button>
+            <button class="btn" id="next" onclick="changeImage(1)">&#8250;</button>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            {
+                src: "./zdjecia/zdj_ai.png",
+                caption: "Grafika generowana przez AI"
+            },
+            {
+                src: "./zdjecia/vr.JPG",
+                caption: "Grafika VR"
+            },
+            {
+                src: "./zdjecia/metaverse.JPG",
+                caption: "Grafika Metaverse"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+
+            document.getElementById("image").src = images[currentIndex].src;
+            document.getElementById("caption").innerText = images[currentIndex].caption;
+        }
+    </script>
+</section>
+
+<section class="visualization">
+    <h2>Wizualizacje</h2><br>
+    <p>Interaktywne wykresy/osie czasu pokazujące ewolucję technologii.</p>
+</section>
+
+
+<footer>
+    <p>Marcel Stasiak 3i</p>
+</footer>
+
+</body>
+</html>
