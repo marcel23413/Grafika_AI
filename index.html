@@ -72,8 +72,99 @@
 </section>
 
 <section class="visualization">
-    <h2>Wizualizacje</h2><br>
-    <p>Interaktywne wykresy/osie czasu pokazujące ewolucję technologii.</p>
+    <h2>Ewolucja Technologii</h2>
+    <div class="timeline-container" tabindex="0" aria-label="Oś czasu ewolucji technologii">
+    <div class="line"></div>
+    <div class="timeline" id="timeline">
+      <!-- Events inserted by JS -->
+    </div>
+  </div>
+
+  <div class="info-box" id="infoBox" role="region" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+  const events = [
+    { year: '1947', tech: 'Transistor opracowany, początek ery elektroniki.' },
+    { year: '1971', tech: 'Intel wypuszcza pierwszy mikroprocesor 4004.' },
+    { year: '1981', tech: 'Pojawia się PC IBM, komputery osobiste stają się popularne.' },
+    { year: '1989', tech: 'Tim Berners-Lee tworzy światową sieć WWW.' },
+    { year: '1991', tech: 'Linux, otwartoźródłowy system operacyjny, zostaje wydany.' },
+    { year: '2004', tech: 'Facebook - początek epoki mediów społecznościowych.' },
+    { year: '2007', tech: 'Premiera iPhone - rewolucja w smartfonach.' },
+    { year: '2010', tech: 'Chmura obliczeniowa i mobilne aplikacje rosną na znaczeniu.' },
+    { year: '2016', tech: 'Rozwój AI i uczenia maszynowego w technologii.' },
+    { year: '2020', tech: 'Pandemia przyspiesza cyfryzację i prace zdalne.' },
+    { year: '2023', tech: 'Sztuczna inteligencja generatywna zmienia krajobraz technologiczny.' }
+  ];
+
+  const timelineEl = document.getElementById('timeline');
+  const infoBox = document.getElementById('infoBox');
+
+  function createEventElement(event, index) {
+    const eventEl = document.createElement('div');
+    eventEl.className = 'event';
+    eventEl.tabIndex = 0;
+    eventEl.setAttribute('role', 'button');
+    eventEl.setAttribute('aria-describedby', 'infoBox');
+    eventEl.dataset.index = index;
+
+    const circle = document.createElement('div');
+    circle.className = 'event-circle';
+    eventEl.appendChild(circle);
+
+    const year = document.createElement('div');
+    year.className = 'event-year';
+    year.textContent = event.year;
+    eventEl.appendChild(year);
+
+    eventEl.addEventListener('click', () => showInfo(index));
+    eventEl.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showInfo(index);
+      }
+    });
+
+    return eventEl;
+  }
+
+  function showInfo(index) {
+    const event = events[index];
+    infoBox.textContent = `${event.year}: ${event.tech}`;
+    infoBox.classList.add('visible');
+
+    // Position info box above event circle
+    const eventEl = timelineEl.children[index];
+    const timelineRect = timelineEl.getBoundingClientRect();
+    const eventRect = eventEl.getBoundingClientRect();
+
+    const offsetLeft = eventRect.left - timelineRect.left + eventRect.width / 2;
+
+    infoBox.style.left = `${offsetLeft}px`;
+
+    // Scroll timeline to center the selected event if possible
+    const container = timelineEl.parentElement;
+    const containerRect = container.getBoundingClientRect();
+    const scrollX = offsetLeft - containerRect.width / 2;
+    container.scrollTo({ left: scrollX, behavior: 'smooth' });
+
+    // Manage focus for accessibility
+    infoBox.focus();
+  }
+
+  function init() {
+    events.forEach((ev, idx) => {
+      const evEl = createEventElement(ev, idx);
+      timelineEl.appendChild(evEl);
+    });
+
+    // Show first event info initially
+    showInfo(0);
+  }
+
+  init();
+</script>
+
 </section>
 
 
