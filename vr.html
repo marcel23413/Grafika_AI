@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Wirtualna rzeczywistość</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <header>
+        <h1> Wirtualna rzeczywistość (VR)</h1>
+        <a href="../index.html"><button class="button"><span>Strona główna</span><span>&#11166;</span></button></a>
+        <a href="./ai.html"><button class="button"><span>AI w grafice</span><span>&#11166;</span></button></a>
+        <a href="./symulacje.html"><button class="button"><span>Symulacje</span><span>&#11166;</span></button></a>
+        <a href="./meta.html"><button class="button"><span>Metaverse</span><span>&#11166;</span></button></a>
+    </header>
+
+    <div class="leftai">
+        <section class="sectionai">
+            <h2>Co to w ogóle jest ?</h2>
+            <p>
+                Wirtualna rzeczywistość (VR) to technologia umożliwiająca tworzenie trójwymiarowych, komputerowo generowanych środowisk,
+                w których użytkownik może zanurzyć się i wchodzić w interakcje w sposób zbliżony do rzeczywistości. Dzięki specjalnym urządzeniom,
+                takim jak gogle VR i kontrolery ruchu, użytkownik może poczuć się, jakby znajdował się w odmiennym świecie—zarówno symulującym 
+                realne miejsca, jak i całkowicie fikcyjne scenariusze. VR wykorzystywana jest m.in. w grach, szkoleniach medycznych czy wizualizacjach
+                architektonicznych, zapewniając immersyjne doświadczenia niewykonalne w tradycyjnych mediach
+            </p>
+        </section>
+
+        <section class="sectionai">
+            <h2>Najnowsze technologie sprzętowe</h2>
+            <ul>
+                <li>
+                    <b>Meta Quest 3/3S:</b> Procesor Snapdragon XR2 Gen 2 zapewnia płynniejsze działanie i krótsze czasy ładowania w porównaniu
+                    do poprzednika. Wersja 3S umożliwia bezprzewodowe połączenie z PC (AirLink/Steam Link), co jest tańszą opcją dla użytkowników
+                    posiadających mocny komputer.
+                </li>
+                <li>
+                    <b>HTC Vive Focus Vision / Vive Pro 2:</b> Focus Vision oferuje rozdzielczość 5K na oko, śledzenie wzroku i foveated rendering
+                    bez stacji bazowych, co zwiększa immersję. Vive Pro 2 to jedna z najlepszych stacji PC VR z wyświetlaczem 5K i precyzyjnym śledzeniem,
+                    często wybierana do zastosowań profesjonalnych.
+                </li>
+                <li>
+                    <b>Inne przykłady:</b>
+                    <ul>
+                        <li>
+                            Vive XR Elite: lekki, hybrydowy headset MR z rozdzielczością 4K na oko i śledzeniem wzroku.
+                        </li>
+                        <li>
+                            PlayStation VR 2: OLED-owy panel, wysoki komfort i obsługa PC VR poza PS5, atrakcyjny wybór dla graczy.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="sectionai">
+            <h2>Grafika czasu rzeczywistego a optymalizacja VR</h2>
+            <ul>
+                <li>
+                    <b>Wyzwania:</b> VR wymaga 72–90 FPS (dla obu oczu), co podwaja obciążenie GPU i zwiększa ryzyko choroby symulacyjnej.
+                    Szerokie pole widzenia wymaga dużej ilości detali w centrum obrazu.
+                </li>
+                <li>
+                    <b>Foveated rendering:</b> Przy pomocy śledzenia wzroku renderuje się najwyższą jakość jedynie w obszarze, na który patrzy użytkownik,
+                    co redukuje liczbę przetwarzanych pikseli nawet o 60–70 %.
+                </li>
+                <li>
+                    <b>Culling (frustum, occlusion):</b> Wykluczanie obiektów poza polem widzenia lub zasłoniętych innymi elementami zmniejsza liczbę
+                    rysowanych geometrii.
+                </li>
+                <li>
+                    <b>ML-based multi-frame generation:</b> Technologie typu DLSS (np. DLSS 4) generują dodatkowe klatki na podstawie poprzednich,
+                    co potrafi zwiększyć wydajność nawet 3–4x przy zachowaniu jakości.
+                </li>
+                <li>
+                    <b>Gaussian splatting:</b> Tworzenie scen 3D z rozmytych „plam” (Gaussian splats) pozwala na fotorealistyczne efekty
+                    przy mniejszej liczbie trójkątów, choć wymaga optymalizacji, by utrzymać stabilne 72+ FPS.
+                </li>
+                <li>
+                    <b>Dodatkowe wskazówki:</b> używanie LOD, kompresja tekstur (ASTC/ETC2), dynamiczne skalowanie rozdzielczości, integracja
+                    bibliotek OpenXR/Meta XR SDK.
+                </li>
+            </ul>
+        </section>
+
+        <section class="sectionai">
+            <h2>VR w edukacji i szkoleniach</h2>
+            <ul>
+                <li>
+                    <b>Medyczne symulatory VR:</b> Platformy typu SimX czy Virtual Medical Coaching umożliwiają trenowanie procedur
+                    (np. diagnoza udaru, operacje laparoskopowe) w wirtualnych środowiskach. Badania pokazują, że ponad 80 % uczestników
+                    odczuwa znaczną poprawę umiejętności dzięki VR, a ponad połowa uznaje symulacje za bardzo realistyczne.
+                </li>
+                <li>
+                    <b>Przykłady zastosowań:</b>
+                    <ul>
+                        <li>Symulacje chirurgiczne (laparoskopia, ortopedia, intubacja).</li>
+                        <li>Zarządzanie masowymi zdarzeniami (wypadki, katastrofy naturalne) i ćwiczenia wieloosobowe.</li>
+                        <li>Onboarding personelu (zapoznanie z wyposażeniem sal operacyjnych, procedurami).</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Korzyści:</b> realistyczne, powtarzalne warunki treningu, standaryzacja scenariuszy, pomiar postępów dzięki analizie danych.
+                </li>
+                <li>
+                    <b>Wyzwania:</b> brak haptycznego feedbacku, wciąż stosunkowo wysokie koszty wdrożenia, konieczność aktualizacji treści wraz
+                    ze zmianami w procedurach.
+                </li>
+            </ul>
+        </section>
+    </div>
+    
+
+    <div class="zdjvr">
+        <img src="../zdjecia/wirtualna-rzeczywistosc.jpg">
+        <img src="../zdjecia/vr2.jpg">
+    </div>
+
+
+    <footer class="footerai">
+    <p>Marcel Stasiak 3i</p>
+    </footer>
+
+</body>
+</html>
