@@ -314,7 +314,7 @@ footer
 
   .line {
     position: absolute;
-    top: 35px;
+    top: 30px;
     height: 4px;
     width: 200%;
     background: linear-gradient(90deg, #0ff, #08a);
