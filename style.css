@@ -65,7 +65,8 @@ li
 }
 .button:hover
 {
-  background-color: rgb(189, 0, 0);
+  background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+  transition: .5s;
 }
 .button :first-child
 {
@@ -101,6 +102,7 @@ li
 .zdj img
 {
   max-width: 25vmax;
+  height: 35vmin;
   margin: auto;
 }
 .slider {
@@ -317,7 +319,7 @@ footer
     position: absolute;
     top: 30px;
     height: 4px;
-    width: 120vmax;
+    width: 2174px;
     background: linear-gradient(90deg, #0ff, #08a);
     border-radius: 2px;
     z-index: 0;
@@ -361,6 +363,7 @@ footer
 
   .info-box {
     margin: auto;
+    margin-top: 40px;
     max-width: 280px;
     background: rgba(0, 255, 255, 0.15);
     border: 2px solid #0ff;
@@ -379,7 +382,7 @@ footer
   .info-box::before {
     content: "";
     position: absolute;
-    bottom: -28vmin;
+    bottom: -30vmin;
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
